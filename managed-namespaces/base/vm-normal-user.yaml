@@ -5,7 +5,7 @@ metadata:
   namespace: myproject
   annotations:
     # Ensures that this resource will be applied after the namespace
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "-1"
   labels:
     kubevirt.io: ""
 rules:
