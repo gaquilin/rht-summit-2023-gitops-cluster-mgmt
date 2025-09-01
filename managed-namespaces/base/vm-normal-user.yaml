@@ -1,0 +1,20 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: vm-normal-user
+  namespace: myproject
+rules:
+  # Console access
+  - apiGroups: ["subresources.kubevirt.io"]
+    resources: ["virtualmachineinstances/console", "virtualmachineinstances/vnc"]
+    verbs: ["get"]
+
+  # VM Power on/off
+  - apiGroups: ["kubevirt.io"]
+    resources: ["virtualmachines/start", "virtualmachines/stop", "virtualmachines/restart"]
+    verbs: ["update"]
+
+  # Snapshot & restore
+  - apiGroups: ["snapshot.kubevirt.io"]
+    resources: ["virtualmachinesnapshots", "virtualmachinerestores"]
+    verbs: ["get", "list", "watch", "create", "delete"]
