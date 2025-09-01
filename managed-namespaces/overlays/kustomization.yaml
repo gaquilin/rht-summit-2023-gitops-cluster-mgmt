@@ -1,3 +1,4 @@
 bases:
 - ./project-memes-dev
 - ./project-memes-prod
+- ./project-virtual-vm
