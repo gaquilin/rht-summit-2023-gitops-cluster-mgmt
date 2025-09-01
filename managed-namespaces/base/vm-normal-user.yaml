@@ -3,6 +3,9 @@ kind: Role
 metadata:
   name: vm-normal-user
   namespace: myproject
+  annotations:
+    # Ensures that this resource will be applied after the namespace
+    argocd.argoproj.io/sync-wave: "0"
 rules:
   # Console access
   - apiGroups: ["subresources.kubevirt.io"]
