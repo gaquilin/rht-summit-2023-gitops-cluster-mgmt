@@ -11,4 +11,4 @@ roleRef:
 subjects:
   - kind: User
     name: foo
-    namespace: project-memes-dev
+    namespace: project-virtual-vm
