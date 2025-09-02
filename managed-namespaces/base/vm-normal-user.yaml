@@ -18,6 +18,15 @@ rules:
     verbs:
       - get
       - list
+  
+  # Generic: visibility on Ocp projects
+  - apiGroups:
+      - project.openshift.io
+    resources:
+      - projects
+    verbs:
+      - get
+      - list
 
   # Virt: Console access
   - apiGroups:
