@@ -19,7 +19,7 @@ patches:
       value: project-virtual-vm
 - target:
     kind: Role
-    namespace: for-replacement
+    name: vm-normal-user
   patch: |-
     - op: replace
       path: /metadata/namespace
