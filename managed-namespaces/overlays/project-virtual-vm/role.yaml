@@ -6,8 +6,8 @@ metadata:
 roleRef:
   # The role being bound
   apiGroup: rbac.authorization.k8s.io
-  kind: Role
-  name: vm-normal-user
+  kind: ClusterRole
+  name: kubevirt.io:view
 subjects:
   - kind: User
     name: foo
