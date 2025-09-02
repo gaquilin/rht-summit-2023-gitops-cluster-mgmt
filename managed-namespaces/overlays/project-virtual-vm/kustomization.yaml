@@ -24,3 +24,13 @@ patches:
     - op: replace
       path: /metadata/namespace
       value: project-virtual-vm
+- target:
+    kind: ResourceQuota
+    name: resource-quota-memory-cpu
+  patch: |-
+    - op: replace
+      path: /spec/hard/cpu
+      value: 1
+    - op: replace
+      path: /spec/hard/memory
+      value: 3Gi
