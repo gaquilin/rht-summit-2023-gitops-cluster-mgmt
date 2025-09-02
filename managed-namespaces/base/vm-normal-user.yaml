@@ -2,7 +2,7 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
   name: vm-normal-user
-  namespace: myproject
+  namespace: for-replacement
   annotations:
     # Ensures that this resource will be applied after the namespace
     argocd.argoproj.io/sync-wave: "-1"
@@ -10,16 +10,33 @@ metadata:
     kubevirt.io: ""
 rules:
   # Console access
-  - apiGroups: ["subresources.kubevirt.io"]
-    resources: ["virtualmachineinstances/console", "virtualmachineinstances/vnc"]
-    verbs: ["get"]
+  - apiGroups:
+      - subresources.kubevirt.io
+    resources:
+      - virtualmachineinstances/console
+      - virtualmachineinstances/vnc
+    verbs:
+      - get
 
   # VM Power on/off
-  - apiGroups: ["kubevirt.io"]
-    resources: ["virtualmachines/start", "virtualmachines/stop", "virtualmachines/restart"]
-    verbs: ["update"]
+  - apiGroups: 
+      - kubevirt.io
+    resources:
+      - virtualmachines/start
+      - virtualmachines/stop
+      - virtualmachines/restart
+    verbs:
+      - update
 
   # Snapshot & restore
-  - apiGroups: ["snapshot.kubevirt.io"]
-    resources: ["virtualmachinesnapshots", "virtualmachinerestores"]
-    verbs: ["get", "list", "watch", "create", "delete"]
+  - apiGroups:
+      - snapshot.kubevirt.io
+    resources:
+      - virtualmachinesnapshots
+      - virtualmachinerestores
+    verbs:
+      - get
+      - list
+      - watch
+      - create
+      - delete

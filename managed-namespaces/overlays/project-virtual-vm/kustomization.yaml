@@ -17,3 +17,10 @@ patches:
     - op: replace
       path: /metadata/name
       value: project-virtual-vm
+- target:
+    kind: Role
+    namespace: for-replacement
+  patch: |-
+    - op: replace
+      path: /metadata/namespace
+      value: project-virtual-vm
