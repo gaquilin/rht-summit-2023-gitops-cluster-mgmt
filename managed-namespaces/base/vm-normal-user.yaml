@@ -60,11 +60,13 @@ rules:
       - create
       - delete
   
-  # Virt: native Kubernetes resources for snapshot
+  # Virt: native Kubernetes CSI resources for snapshot
   - apiGroups:
     - snapshot.storage.k8s.io
     resources:
     - volumesnapshots
+    - volumesnapshotcontents
+    - volumesnapshotclasses
     verbs:
     - get
     - list
